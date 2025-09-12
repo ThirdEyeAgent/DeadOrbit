@@ -1,0 +1,30 @@
+<Application x:Class="DeadOrbitCapture.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="MainWindow.xaml">
+  <Application.Resources>
+    <SolidColorBrush x:Key="Bg" Color="#0E0F12"/>
+    <SolidColorBrush x:Key="Fg" Color="#E8EDF2"/>
+    <SolidColorBrush x:Key="Accent" Color="#87F5FF"/>
+    <Style TargetType="Window">
+      <Setter Property="Background" Value="{StaticResource Bg}"/>
+      <Setter Property="Foreground" Value="{StaticResource Fg}"/>
+      <Setter Property="FontFamily" Value="Consolas"/>
+    </Style>
+    <Style TargetType="Button">
+      <Setter Property="Margin" Value="6"/>
+      <Setter Property="Padding" Value="10,6"/>
+      <Setter Property="Background" Value="#1B1E24"/>
+      <Setter Property="Foreground" Value="{StaticResource Fg}"/>
+      <Setter Property="BorderBrush" Value="{StaticResource Accent}"/>
+      <Setter Property="BorderThickness" Value="1"/>
+    </Style>
+    <Style TargetType="ListBox">
+      <Setter Property="Margin" Value="6"/>
+      <Setter Property="Background" Value="#14161A"/>
+      <Setter Property="Foreground" Value="{StaticResource Fg}"/>
+      <Setter Property="BorderBrush" Value="#2A2F37"/>
+      <Setter Property="BorderThickness" Value="1"/>
+    </Style>
+  </Application.Resources>
+</Application>
