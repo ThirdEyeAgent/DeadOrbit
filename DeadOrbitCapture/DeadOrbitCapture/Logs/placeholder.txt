@@ -1,1 +1,0 @@
-Logs will be written here automatically for each request captured.
