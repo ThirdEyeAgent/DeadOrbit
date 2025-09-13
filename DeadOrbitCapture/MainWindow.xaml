@@ -1,0 +1,70 @@
+<Window x:Class="DeadOrbitCapture.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="DeadOrbit Capture"
+        Height="720"
+        Width="1100"
+        Background="Black"
+        Foreground="White">
+
+  <Window.Resources>
+    <SolidColorBrush x:Key="ControlBg" Color="Black"/>
+    <SolidColorBrush x:Key="TextFg"    Color="White"/>
+
+    <Style TargetType="Button">
+      <Setter Property="Background"  Value="{StaticResource ControlBg}"/>
+      <Setter Property="Foreground"  Value="{StaticResource TextFg}"/>
+      <Setter Property="BorderBrush" Value="{StaticResource ControlBg}"/>
+      <Setter Property="Margin"      Value="4"/>
+      <Setter Property="Padding"     Value="6,4"/>
+      <Setter Property="FontWeight"  Value="Bold"/>
+    </Style>
+  </Window.Resources>
+
+  <Grid Background="{StaticResource ControlBg}" Margin="10">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+
+    <!-- Toolbar -->
+    <StackPanel Grid.Row="0"
+                Orientation="Horizontal"
+                Background="{StaticResource ControlBg}"
+                Margin="0,0,0,6">
+      <Button Content="Start Services"   Click="Start_Click"/>
+      <Button Content="Stop Services"    Click="Stop_Click"/>
+      <Button Content="Export Log"       Click="ExportLog_Click"/>
+      <Button Content="Show Interfaces"  Click="ShowIfaces_Click"/>
+
+      <TextBlock x:Name="IpText"
+                 Margin="20,0,0,0"
+                 VerticalAlignment="Center"/>
+    </StackPanel>
+
+    <!-- Instruction bar -->
+    <Border Grid.Row="1"
+            Background="{StaticResource ControlBg}"
+            Margin="0,0,0,6"
+            Padding="4">
+      <TextBlock Text="Set RPCS3 DNS to the IP shown. SignOn will auto-capture after initial spoof."/>
+    </Border>
+
+    <!-- Log output -->
+    <ListBox x:Name="LogList"
+             Grid.Row="2"
+             DisplayMemberPath="Display"
+             Background="{StaticResource ControlBg}"
+             Foreground="{StaticResource TextFg}"/>
+
+    <!-- Footer -->
+    <Border Grid.Row="3"
+            Background="{StaticResource ControlBg}"
+            Margin="0,6,0,0"
+            Padding="4">
+      <TextBlock Text="Logs → Logs\\*.bin. Requires Admin for ports 53 &amp; 80."/>
+    </Border>
+  </Grid>
+</Window>
