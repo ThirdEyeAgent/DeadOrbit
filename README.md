@@ -19,3 +19,6 @@ Now hit run start services buton and press the start button in game
 
 
 The deadOrbitCapture Log will capture all the outputing trafic data from game.
+
+
+It will get you past the connecting stage and to the signing in stage from there it expects a Bungie configuration file to be sent to get past the menu.
